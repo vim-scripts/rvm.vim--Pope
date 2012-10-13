@@ -1,0 +1,26 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4269
+
+Want to use RVM with Vim?  You don't need a plugin to do that:  Just start Vim from your RVM enabled shell and it will work.  But say you started MacVim from Launchpad, or you started Vim with one version of Ruby and now you want another.  That's where rvm.vim comes in.
+
+    :Rvm 1.9.2
+
+If you want to see the version that was chosen, use "use":
+
+    :Rvm use default
+
+If you leave off the version, it goes .rvmrc hunting relative to the current buffer.
+
+    :Rvm
+    :Rvm use
+
+If you really want to get crazy, you can make this happen automatically as you switch from buffer to buffer.
+
+    :autocmd BufEnter * Rvm
+
+You can also invoke any old command.
+
+    :Rvm install 1.9.3
+
+Add %{rvm#statusline()} to 'statusline' (or 'titlestring') to see the current Ruby version at all times.
+
+Report bugs at https://github.com/tpope/vim-rvm/issues.
